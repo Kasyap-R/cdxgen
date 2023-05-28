@@ -2179,7 +2179,7 @@ const createPythonBom = async (path, options) => {
       }
     }
   }
-  if (!pkgList.length && setupPyMode) {
+  if (setupPyMode) {
     const setupPyData = fs.readFileSync(setupPy, { encoding: "utf-8" });
     dlist = await utils.parseSetupPyFile(setupPyData);
     if (dlist && dlist.length) {
